@@ -1,2 +1,2 @@
 # UnityMedley
-🎮 Collection of small Unity reference projects
+🎮 A collection of small Unity reference projects
