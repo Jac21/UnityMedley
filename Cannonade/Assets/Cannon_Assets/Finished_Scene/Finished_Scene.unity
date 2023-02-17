@@ -2113,8 +2113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundVariant1: {fileID: 8300000, guid: be2bd730c901843ab9ca1456b133aa8a, type: 3}
   soundVariant2: {fileID: 8300000, guid: 08092ce94a97d4ae5980b317e5db1d70, type: 3}
-  lowPitchRange: 0.75
-  highPitchRange: 1.25
+  lowPitchRange: 0.25
+  highPitchRange: 0.5
   influenceOfMagnitude: 0.1
   velocityLimit: 15
 --- !u!82 &7437838281741411801
@@ -2393,8 +2393,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundVariant1: {fileID: 8300000, guid: be2bd730c901843ab9ca1456b133aa8a, type: 3}
   soundVariant2: {fileID: 8300000, guid: 08092ce94a97d4ae5980b317e5db1d70, type: 3}
-  lowPitchRange: 0.75
-  highPitchRange: 1.25
+  lowPitchRange: 0.25
+  highPitchRange: 0.5
   influenceOfMagnitude: 0.1
   velocityLimit: 15
 --- !u!82 &7437838281898822353
@@ -2849,8 +2849,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundVariant1: {fileID: 8300000, guid: be2bd730c901843ab9ca1456b133aa8a, type: 3}
   soundVariant2: {fileID: 8300000, guid: 08092ce94a97d4ae5980b317e5db1d70, type: 3}
-  lowPitchRange: 0.75
-  highPitchRange: 1.25
+  lowPitchRange: 0.25
+  highPitchRange: 0.5
   influenceOfMagnitude: 0.1
   velocityLimit: 15
 --- !u!114 &7437838282104973920
@@ -2879,8 +2879,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundVariant1: {fileID: 8300000, guid: be2bd730c901843ab9ca1456b133aa8a, type: 3}
   soundVariant2: {fileID: 8300000, guid: 08092ce94a97d4ae5980b317e5db1d70, type: 3}
-  lowPitchRange: 0.75
-  highPitchRange: 1.25
+  lowPitchRange: 0.25
+  highPitchRange: 0.5
   influenceOfMagnitude: 0.1
   velocityLimit: 15
 --- !u!82 &7437838282446765121
@@ -3233,8 +3233,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundVariant1: {fileID: 8300000, guid: be2bd730c901843ab9ca1456b133aa8a, type: 3}
   soundVariant2: {fileID: 8300000, guid: 08092ce94a97d4ae5980b317e5db1d70, type: 3}
-  lowPitchRange: 0.75
-  highPitchRange: 1.25
+  lowPitchRange: 0.25
+  highPitchRange: 0.5
   influenceOfMagnitude: 0.1
   velocityLimit: 15
 --- !u!23 &7437838282953611798
@@ -3365,8 +3365,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundVariant1: {fileID: 8300000, guid: be2bd730c901843ab9ca1456b133aa8a, type: 3}
   soundVariant2: {fileID: 8300000, guid: 08092ce94a97d4ae5980b317e5db1d70, type: 3}
-  lowPitchRange: 0.75
-  highPitchRange: 1.25
+  lowPitchRange: 0.25
+  highPitchRange: 0.5
   influenceOfMagnitude: 0.1
   velocityLimit: 15
 --- !u!82 &7437838283480747237

@@ -8,8 +8,8 @@ public class CrashSound : MonoBehaviour
     public AudioClip soundVariant1;
     public AudioClip soundVariant2;
   
-    public float lowPitchRange = 0.75f;
-    public float highPitchRange = 1.25f;
+    public float lowPitchRange = 0.25f;
+    public float highPitchRange = .05f;
   
     public float influenceOfMagnitude = .01f;
     public float velocityLimit = 15f;

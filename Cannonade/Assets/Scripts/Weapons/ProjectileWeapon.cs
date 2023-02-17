@@ -15,8 +15,8 @@ namespace Weapons
         [SerializeField] public float launchVelocity = 700f;
 
         [SerializeField] public AudioClip shootsound;
-        [SerializeField] public float lowVolumeRange = .5f;
-        [SerializeField] public float highVolumeRange = 1.0f;
+        [SerializeField] public float lowVolumeRange = .25f;
+        [SerializeField] public float highVolumeRange = .05f;
         
         private AudioSource _source;
         
