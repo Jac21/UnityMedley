@@ -1,11 +1,10 @@
 using System.Collections;
 using Logging;
 using UnityEngine;
-using Weapons.Raycasting;
 
-namespace Weapons
+namespace Weapons.Raycasting
 {
-    public class AutomaticProjectileWeapon : MonoBehaviour
+    public class LinecastedAutomaticProjectileWeapon : MonoBehaviour
     {
         /// <summary>
         /// Set the number of hitpoints that this gun will take away from shot objects with a health script
@@ -20,7 +19,7 @@ namespace Weapons
         /// <summary>
         /// Distance in Unity units over which the player can fire
         /// </summary>
-        [SerializeField] public float weaponRange = 50f;
+        [SerializeField] public int weaponRange = 50;
 
         /// <summary>
         /// Amount of force which will be added to objects with a rigidbody shot by the player
@@ -37,9 +36,7 @@ namespace Weapons
         private LineRenderer _laserLine;
         private float _nextFire;
 
-        [SerializeField] public AudioSource gunAudio;
-        [SerializeField] public float lowVolumeRange = .25f;
-        [SerializeField] public float highVolumeRange = .05f;
+        private AudioSource gunAudio;
 
         // Start is called before the first frame update
         void Start()
@@ -47,8 +44,6 @@ namespace Weapons
             _laserLine = GetComponent<LineRenderer>();
 
             gunAudio = GetComponent<AudioSource>();
-
-            gunAudio.volume = Random.Range(lowVolumeRange, highVolumeRange);
 
             _fpsCam = GetComponentInParent<UnityEngine.Camera>();
         }
@@ -66,13 +61,13 @@ namespace Weapons
                 _laserLine.SetPosition(0, gunEnd.position);
 
                 // Check if our raycast has hit anything
-                if (Physics.Raycast(rayOrigin, _fpsCam.transform.forward, out var hit, weaponRange))
+                if (Physics.Linecast(rayOrigin, _fpsCam.transform.forward, out var hit, weaponRange))
                 {
                     // Set the end position for our laser line 
                     _laserLine.SetPosition(1, hit.point);
 
                     // Get a reference to a health script attached to the collider we hit
-                    var health = hit.collider.GetComponent<RaycastingShootableBox>();
+                    var health = hit.collider.GetComponent<LinecastingShootableBox>();
 
                     // If there was a health script attached
                     if (health != null)
@@ -81,7 +76,7 @@ namespace Weapons
                         health.Damage(gunDamage);
 
                         GameLog.LogMessage(
-                            $"{nameof(AutomaticProjectileWeapon)}.{nameof(Update)}: {health.name} damaged for {gunDamage}");
+                            $"{nameof(RaycastedAutomaticProjectileWeapon)}.{nameof(Update)}: {health.name} damaged for {gunDamage}");
                     }
 
                     // Check if the object we hit has a rigidbody attached
