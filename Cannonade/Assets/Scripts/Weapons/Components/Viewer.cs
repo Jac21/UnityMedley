@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Weapons.Raycasting
+namespace Weapons.Components
 {
-    public class RayViewer : MonoBehaviour
+    public class Viewer : MonoBehaviour
     {
         [SerializeField] public float weaponRange = 50f;
 

@@ -1,6 +1,7 @@
 using System.Collections;
 using Logging;
 using UnityEngine;
+using Weapons.Components;
 
 namespace Weapons.Raycasting
 {
@@ -63,11 +64,14 @@ namespace Weapons.Raycasting
                 // Check if our raycast has hit anything
                 if (Physics.Raycast(rayOrigin, _fpsCam.transform.forward, out var hit, weaponRange))
                 {
+                    GameLog.LogMessage(
+                        $"{nameof(RaycastedAutomaticProjectileWeapon)}.{nameof(Update)}: {hit.collider.name} hit!");
+
                     // Set the end position for our laser line 
                     _laserLine.SetPosition(1, hit.point);
 
                     // Get a reference to a health script attached to the collider we hit
-                    var health = hit.collider.GetComponent<RaycastingShootableBox>();
+                    var health = hit.collider.GetComponent<Components.WeaponShootableBox>();
 
                     // If there was a health script attached
                     if (health != null)

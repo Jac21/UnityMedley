@@ -1,9 +1,9 @@
 using Logging;
 using UnityEngine;
 
-namespace Weapons.Raycasting
+namespace Weapons.Components
 {
-    public class LinecastingShootableBox : MonoBehaviour
+    public class WeaponShootableBox : MonoBehaviour
     {
         [SerializeField] public int health = 3;
 
@@ -14,7 +14,7 @@ namespace Weapons.Raycasting
             if (health <= 0)
             {
                 GameLog.LogMessage(
-                    $"{nameof(LinecastingShootableBox)}.{nameof(Damage)}: {gameObject.name} destroyed");
+                    $"{nameof(WeaponShootableBox)}.{nameof(Damage)}: {gameObject.name} destroyed");
 
                 gameObject.SetActive(false);
             }
