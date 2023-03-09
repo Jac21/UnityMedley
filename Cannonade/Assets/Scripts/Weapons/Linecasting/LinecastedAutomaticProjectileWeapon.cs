@@ -14,7 +14,7 @@ namespace Weapons.Linecasting
         /// <summary>
         /// Number in seconds which controls how often the player can fire
         /// </summary>
-        [SerializeField] public float fireRate = 0.25f;
+        [SerializeField] public float fireRate = 0.15f;
 
         /// <summary>
         /// Distance in Unity units over which the player can fire
@@ -26,9 +26,6 @@ namespace Weapons.Linecasting
         /// </summary>
         [SerializeField] public float hitForce = 100f;
 
-        /// <summary>
-        /// Amount of force which will be added to objects with a rigidbody shot by the player
-        /// </summary>
         [SerializeField] public Transform gunEnd;
 
         private UnityEngine.Camera _fpsCam;
@@ -56,16 +53,20 @@ namespace Weapons.Linecasting
 
                 StartCoroutine(ShotEffect());
 
+                // create a vector at the center of our camera's viewport
                 var origin = _fpsCam.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, 0.0f));
 
-                _laserLine.SetPosition(0, gunEnd.position);
+                var gunEndPosition = gunEnd.position;
 
-                // Check if our linecast has hit anything
-                if (Physics.Linecast(origin, _fpsCam.transform.forward, out var hit))
+                _laserLine.SetPosition(0, gunEndPosition);
+                var endPoint = gunEndPosition + new Vector3(0, 0, weaponRange);
+
+                // check if our linecast has hit anything
+                if (Physics.Linecast(origin, endPoint, out var hit))
                 {
                     GameLog.LogMessage(
                         $"{nameof(LinecastedAutomaticProjectileWeapon)}.{nameof(Update)}: {hit.collider.name} hit!");
-                    
+
                     // Set the end position for our laser line 
                     _laserLine.SetPosition(1, hit.point);
 
